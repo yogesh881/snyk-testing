@@ -1,0 +1,14 @@
+name: 'Is Website Vulnerable'
+description: 'Scans a URL for publicly known JavaScript library vulnerabilities'
+branding:
+  icon: 'alert-circle'  
+  color: 'purple'
+inputs:
+  scan-url:
+    description: 'Website URL to scan'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    SCAN_URL: ${{ inputs.scan-url }}
